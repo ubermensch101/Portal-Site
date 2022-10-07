@@ -1,0 +1,44 @@
+{% extends "users/base.html" %}
+{% block title %} Home Page {% endblock title %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome</h1>
+        <p class="lead">
+            This is a test application for the Python-Django project.
+        </p>
+        <div class="card-deck">
+            <div class="card text-white bg-info mb-3" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Project1</h5>
+                <p class="card-text">
+                    This is a gist of what project 1 is about.
+                </p>
+                <br><hr><a href="{% url 'project1' %}" class="btn btn-secondary">Check it out</a>
+                </div>
+            </div>
+            <div class="card text-white bg-info mb-3" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Project2</h5>
+                <p class="card-text">
+                    This is a gist of what project 2 is about.
+                </p>
+                <br><hr><a href="{% url 'project2' %}" class="btn btn-secondary">Check it out</a>
+                </div>
+            </div>
+            <div class="card text-white bg-info mb-3" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Project3</h5>
+                <p class="card-text">
+                    This is a gist of what project 3 is about.
+                </p>
+                <br><hr><a href="{% url 'project3' %}" class="btn btn-secondary">Check it out</a>
+                </div>
+            </div>
+    </div>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Logout</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'login'%}" role="button">Sign in</a>
+        </p>
+    </div>
+{% endblock content %}

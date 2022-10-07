@@ -1,0 +1,35 @@
+{% extends "users/base.html" %}
+{% block title %}Project 1{% endblock title %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}">
+
+    <form method="post" enctype="multipart/form-data">
+    </form>
+
+    <div style="margin-left:12%;padding:1px 16px;">
+        <h1>This is the project 1 page.</h1>
+        <div>
+            <textarea id="tiny">
+                from django.db import models
+                <br>
+
+                # Create your models here.
+                <br>
+                class Members(models.Model):
+                <br>
+                firstname = models.CharField(max_length=255, blank='True')
+                lastname = models.CharField(max_length=255, blank='True')
+                DOB = models.DateField(blank=True)
+                blood_group= models.CharField(max_length=255, blank=True)
+                email_id = models.EmailField(max_length=255 , blank=True)
+                mobile_number = models.CharField(max_length=255 , blank=True)
+                upcoming_appointment = models.DateTimeField(blank = True, null=True)
+                sent_mail = models.BooleanField(default= False)
+            </textarea>
+        </div>
+        <h2><a href="{% url 'formupload' %}">Submit your code here</a></h2>
+    </div>
+
+
+{% endblock content %}

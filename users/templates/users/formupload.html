@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+
+{% block title %} This is for file uploads {% endblock %}
+
+{% block content %}
+  Submit your code for here.
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+
+  <p><a href="{% url 'users-home' %}">Return to home</a></p>
+{% endblock %}
